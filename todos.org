@@ -1,0 +1,13 @@
+* TODO - add picam
+* TODO - add wifi
+* TODO - add http video streamer
+* TODO - display live stream from picam
+* TODO - store video in chunks locally
+* TODO - add GPS module
+* TODO - add overlay information
+** TODO - overlay date and time
+** TODO - overlay GPS info
+* TODO - add microphone
+* TODO - record audio with video
+* TODO - upload old data to S3 storage
+* TODO - add touch screen display
