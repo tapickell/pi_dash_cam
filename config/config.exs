@@ -16,7 +16,7 @@ config :nerves_network, :default,
   wlan0: [
     ssid: "Pickle's Wi-Fi Network",
     psk: "Sprt121926",
-    key_mgmt: :"WPA2-PSK"
+    key_mgmt: :"WPA-PSK"
   ],
   eth0: [
     ipv4_address_method: :dhcp
