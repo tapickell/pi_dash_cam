@@ -3,12 +3,12 @@ defmodule PiDashCam.Application do
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
-    port = Application.get_env(:picam_http, :port)
-    # interface = Application.get_env(:pi_dash_cam, :interface, :eth0)
-    # Nerves.Network.setup interface
+    port = Application.get_env(:picam_http, :port, 8080)
+    interface = Application.get_env(:pi_dash_cam, :interface, :eth0)
 
     children = [
       worker(Picam.Camera, []),
+      worker(Task, [fn -> Nerves.Network.setup interface, [] end], restart: :transient),
       Plug.Adapters.Cowboy.child_spec(:http, PiDashCam.Router, [], [port: port]),
     ]
 
